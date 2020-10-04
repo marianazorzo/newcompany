@@ -1,0 +1,330 @@
+/**
+ * Popup structure
+ */
+.popup-outer{
+    display: none;
+    background: transparent;
+    border: 1px solid #ffffff;
+    margin: 0 auto;
+    max-width: 1320px;
+    padding: 9px;
+    width: 90%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+
+    &.open{
+        display: block;
+    }
+}
+
+.popup{
+    background: #ffffff;
+    position: relative;
+}
+
+.btn-close{
+    color: @color-primary;
+    display: block;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+
+    &:before,
+    &:after{
+        content: "";
+        background: @color-decoration;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 11px;
+        margin: 0 auto;
+        height: 18px;
+        width: 1px;
+    }
+
+    &:before{
+        transform: rotate(45deg);
+    }
+
+    &:after{
+        transform: rotate(-45deg);
+    }
+
+    &:hover,
+    &:focus,
+    &:active{
+        background-color: @color-hover-bg-btn;
+    }
+}
+
+/**
+ * Popup header
+ */
+.popup-header{
+    padding: 96px 10px 40px;
+    position: relative;
+
+    &:before,
+    &:after{
+        content: "";
+        display: block;
+        width: @width-decoration;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    &:before{
+        border: 10px @color-borders solid;
+        height: 410px;
+        top: -40px;
+    }
+
+    &:after{
+        border-bottom: 2px @color-decoration solid;
+        height: 0;
+        bottom: 0;
+    }
+
+    > *{
+        position: relative;
+    }
+}
+
+.super-title{
+    span{
+        color: @color-primary;
+        display: block;
+    }
+}
+
+.em{
+    display: block;
+    margin: 10px 0;
+}
+
+.description{
+    margin-top: 80px;
+}
+
+/**
+ * Popup Features
+ */
+.features,
+.features-list{
+    margin-top: 40px;
+}
+
+.features{
+    padding: 0 10px 60px;
+}
+
+.features-list{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 510px;
+    width: 100%;
+
+    li{
+        color: @color-text;
+        margin-bottom: 4px;
+
+        &:before{
+            content: "";
+            display: inline-block;
+            background: @color-decoration;
+            margin: 0 18px 5px 0;
+            height: 3px;
+            width: 3px;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+/**
+ * Footer
+ */
+.footer{
+    background: @color-primary;
+    color: #ffffff;
+    padding: 60px 10px 120px;
+    position: relative;
+
+    &:before{
+        content: "";
+        display: block;
+        border: 10px @color-borders solid;
+        height: 110px;
+        width: @width-decoration;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0 auto;
+        transform: translateY(50%);
+    }
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    max-width: 698px;
+    width: 100%;
+
+    > * {
+        margin-bottom: 10px;
+    }
+
+    > :nth-child(1){
+        order: 1
+    }
+
+    > :nth-child(2){
+        order: 2
+    }
+
+    > :nth-child(3){
+        order: 4;
+        display: flex;
+    }
+
+    > :nth-child(4){
+        order: 3;
+    }
+}
+
+.small{
+    color: @color-small-text;
+}
+
+/**
+ * Decorations
+ */
+.decor{
+    display: none;
+
+    &.open{
+        display: block;
+    }
+}
+
+.bg-tool,
+.bg-shavings{
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.bg-tool{
+    background-image: url(../img/tool.png);
+    height: 495px;
+    width: 569px;
+    top: 880px;
+    left: 0;
+    transform: translateX(-60%);
+}
+
+.bg-shavings{
+    background-image: url(../img/shavings.png);
+    height: 129px;
+    width: 177px;
+    top: 290px;
+    right: 0;
+    transform: translateX(50%);
+}
+
+@media only screen and (min-width: 380px) {
+    .features-list{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (min-width: @medium-break) {
+    /**
+     * Popup structure
+     */
+    .popup-outer{
+        top: 166px;
+    }
+
+    .btn-close{
+        right: 22px;
+        top: 22px;
+    }
+
+    /**
+     * Popup header
+     */
+    .popup-header{
+        padding-top: 106px;
+        padding-bottom: 50px;
+
+        &:before{
+            height: 510px;
+        }
+    }
+
+    .em{
+        margin: 14px 0;
+    }
+
+    /**
+     * Popup Features
+     */
+    .features{
+        margin-top: 50px;
+        padding-bottom: 90px;
+    }
+
+    .features-list{
+        margin-top: 46px;
+    }
+
+    /**
+     * Footer
+     */
+    .footer{
+        padding-top: 90px;
+        padding-bottom: 140px;
+    }
+
+    /**
+     * Form
+     */
+    .form{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: stretch;
+        align-items: flex-start;
+        margin-left: auto;
+        margin-right: auto;
+
+        > * {
+            margin-bottom: 25px;
+            margin-right: 10px;
+        }
+
+        > :nth-child(1),
+        > :nth-child(2){
+            flex: 2 1 35%;
+        }
+
+        > :nth-child(3){
+            flex: 0 0 470px;
+        }
+
+        > :nth-child(4){
+            flex: 1 40 20%;
+        }
+    }
+
+}

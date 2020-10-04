@@ -1,0 +1,27 @@
+.btn{
+    background-color: @color-bg-btn;
+    border: 0;
+    color: @color-btn;
+    cursor: pointer;
+    display: block;
+    height: @element-height;
+    padding: @element-padding;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+
+    &:hover,
+    &:focus,
+    &:active{
+        background-color: @color-hover-bg-btn;
+        color: @color-hover-btn;
+
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+}
